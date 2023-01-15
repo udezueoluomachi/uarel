@@ -96,3 +96,9 @@ button.input:hover {
     overflow: hidden;
     border-radius: 0.8px;
 }
+
+@media only screen and (max-width:600px) {
+    .main-cont {
+        padding: 16% 10px;
+    }
+}
