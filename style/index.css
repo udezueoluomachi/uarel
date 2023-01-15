@@ -65,13 +65,14 @@ input {
 }
 input , .swal-text {
     font-family: monospace;
+    caret-color: var(--default-blue);
 }
 .input {
     padding: 7px;
     margin-top: 20px;
-    height: 28px;
+    height: 32px;
     width: 90vw;
-    min-width: 190px;
+    min-width: 200px;
     border-radius: 5px;
 }
 .input , .input:focus , .swal-text {
@@ -79,7 +80,7 @@ input , .swal-text {
     outline: none;
 }
 .input , .intro-text , .swal-text {
-    max-width: 210px;
+    max-width: 220px;
 }
 
 button.input , .swal-button--confirm , .swal-button--retry {
