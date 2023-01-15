@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    letter-spacing: 1.2px;
+    font-family: monospace;
+}
+:root {
+    --white: #FFFFFF;
+    --default-blue: #5786FF;
+    --border-blue: #35ACEF;
+    --black-variant-1: #474545;
+    --black-trans-18: #00000022;
+    --black-input-field-text-color: #615858;
+    --close-btn-text-color: #090909;
+    --close-btn-border-color: #1D1C1C;
+    --close-btn-bg-color: #FAF8F8;
+}
+
+.white-color {
+    color: var(--white);
+}
+.white-bg {
+    background-color: var(--white);
+}
+.default-blue-color{
+    color: var(--default-blue);
+}
+.default-blue-bg {
+    background-color: var(--default-blue);
+}
