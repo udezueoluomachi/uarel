@@ -24,9 +24,66 @@
         </form>
     </div>
     <script>
-        swal("Generated", "https://github.com/udezueoluomachi/uarel", {
-            icon : "success",
-            buttons: ["close","copy"]
+        const $ = e => document.querySelector(e);
+        const urlInput = $("#url-input");
+        const genBtn = $("button.input");
+
+        genBtn.addEventListener("click", () => {
+            genBtn.innerText = "...";
+            genBtn.disabled = true;
+
+            function request() {
+                fetch("http://localhost:4000/", {
+                    method : "POST",
+                    body : "hey"
+                })
+                .then(data => data.json())
+                .then(res => {
+                    let url = "https://github.com/udezueoluomachi/uarel";//change this to the response url
+                    swal("Generated", url, {
+                        icon : "success",
+                        buttons: {
+                            cancel : "close",
+                            confirm : {
+                                text : "copy",
+                                value : true,
+                                closeModal : false
+                            }
+                        }
+                    })
+                    .then(val => {
+                        genBtn.innerText = "Generate";
+                        genBtn.disabled = false;
+                        navigator.clipboard.writeText(url)
+                        swal({
+                            title : "Copied!"
+                        })
+                    })
+                })
+                .catch(err => {
+                    swal({
+                        title : "An error occured",
+                        icon : "error",
+                        buttons : {
+                            cancel : "close",
+                            retry : {
+                                text : "retry",
+                                closeModal : false
+                            }
+                        }
+                    })
+                    .then(val => {
+                        if(val) {
+                            request();
+                        }
+                        else {
+                            genBtn.innerText = "Generate";
+                            genBtn.disabled = false;
+                        }
+                    })
+                })
+            }
+            request();
         })
     </script>
 </body>

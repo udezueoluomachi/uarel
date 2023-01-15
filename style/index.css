@@ -71,7 +71,7 @@ input , .swal-text {
     margin-top: 20px;
     height: 28px;
     width: 90vw;
-    min-width: 180px;
+    min-width: 190px;
     border-radius: 5px;
 }
 .input , .input:focus , .swal-text {
@@ -82,7 +82,7 @@ input , .swal-text {
     max-width: 210px;
 }
 
-button.input , .swal-button--confirm {
+button.input , .swal-button--confirm , .swal-button--retry {
     background-color: var(--default-blue);
     color: var(--white);
 }
