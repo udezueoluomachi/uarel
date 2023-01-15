@@ -25,7 +25,7 @@ genBtn.addEventListener("click", () => {
     }
 
     function request() {
-        fetch("http://localhost:4000/", {
+        fetch("http://localhost:4000/", { //change url when deployed
             method : "POST",
             body : dataToServer
         })
