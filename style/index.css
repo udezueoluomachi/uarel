@@ -62,6 +62,8 @@
 }
 input {
     color: var(--black-input-field-text-color);
+}
+input , .swal-text {
     font-family: monospace;
 }
 .input {
@@ -72,19 +74,25 @@ input {
     min-width: 180px;
     border-radius: 5px;
 }
-.input , .input:focus {
+.input , .input:focus , .swal-text {
     border: 1px solid var(--border-blue);
     outline: none;
 }
-.input , .intro-text {
+.input , .intro-text , .swal-text {
     max-width: 210px;
 }
 
-button.input {
+button.input , .swal-button--confirm {
     background-color: var(--default-blue);
     color: var(--white);
 }
 button.input:hover {
     opacity: 0.9;
     outline: 3px solid var(--black-trans-18);
+}
+.swal-text {
+    font-size: small;
+    height: 18px;
+    overflow: hidden;
+    border-radius: 0.8px;
 }
