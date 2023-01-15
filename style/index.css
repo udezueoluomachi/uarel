@@ -1,10 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    letter-spacing: 1.2px;
-    font-family: monospace;
-}
 :root {
     --white: #FFFFFF;
     --default-blue: #5786FF;
@@ -17,15 +10,81 @@
     --close-btn-bg-color: #FAF8F8;
 }
 
-.white-color {
+@font-face {
+    font-family: comfortaa-r;
+    src: url("../fonts/static/Comfortaa-Regular.ttf");
+}
+@font-face {
+    font-family: comfortaa-b;
+    src: url("../fonts/static/Comfortaa-Bold.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    letter-spacing: 1.2px;
+    font-family: comfortaa-r , monospace;
+}
+
+.flex {
+    display: flex;
+}
+.flex-x-c, .flex-x-y-c {
+    justify-content: center;
+}
+.flex-x-y-c {
+    align-items: center;
+}
+
+.main-cont {
+    width: 100%;
+    height: auto;
+    padding: 6% 10px;
+    flex-flow: wrap column;
+}
+/*
+.section-1 {
+}
+*/
+.intro-text {
+    margin-top: 40px;
+    color: var(--black-variant-1);
+    text-align: center;
+}
+
+.section-1 , .intro-text , .index-form {
+    width: max-content;
+}
+
+.index-form {
+    padding: 20px;
+}
+input {
+    color: var(--black-input-field-text-color);
+    font-family: monospace;
+}
+.input {
+    padding: 7px;
+    margin-top: 20px;
+    height: 28px;
+    width: 90vw;
+    min-width: 180px;
+    border-radius: 5px;
+}
+.input , .input:focus {
+    border: 1px solid var(--border-blue);
+    outline: none;
+}
+.input , .intro-text {
+    max-width: 210px;
+}
+
+button.input {
+    background-color: var(--default-blue);
     color: var(--white);
 }
-.white-bg {
-    background-color: var(--white);
-}
-.default-blue-color{
-    color: var(--default-blue);
-}
-.default-blue-bg {
-    background-color: var(--default-blue);
+button.input:hover {
+    opacity: 0.9;
+    outline: 3px solid var(--black-trans-18);
 }
