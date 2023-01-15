@@ -86,6 +86,10 @@ button.input , .swal-button--confirm , .swal-button--retry {
     background-color: var(--default-blue);
     color: var(--white);
 }
+button:disabled {
+    opacity: 0.5;
+    outline: none;
+}
 button.input:hover {
     opacity: 0.9;
     outline: 3px solid var(--black-trans-18);
