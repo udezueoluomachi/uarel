@@ -21,37 +21,50 @@ genBtn.addEventListener("click", () => {
     function reset() {
         urlInput.value = "";
         genBtn.innerText = "Generate";
-        genBtn.disabled = false;
     }
 
     function request() {
-        fetch("http://localhost:4000/", { //change url when deployed
-            method : "POST",
-            body : dataToServer
-        })
-        .then(data => data.json())
-        .then(res => {
-            let url = "https://github.com/udezueoluomachi/uarel";//change this to the response url
-            swal("Generated", url, {
-                icon : "success",
-                buttons: {
-                    cancel : "close",
-                    confirm : {
-                        text : "copy",
-                        value : true,
-                        closeModal : false
-                    }
-                }
-            })
-            .then(val => {
-                reset();
-                navigator.clipboard.writeText(url)
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            let res = xhr.responseText;
+            let parsedRes = JSON.parse(res);
+
+            if(parsedRes.error) {
                 swal({
-                    title : "Copied!"
+                    title : "An error occured",
+                    icon : "error"
                 })
-            })
-        })
-        .catch(err => {
+                .then(val => {
+                    reset();
+                })
+            }
+            else {
+                let url = parsedRes.url || "https://github.com/udezueoluomachi/uarel";
+                swal("Generated", url, {
+                    icon : "success",
+                    buttons: {
+                        cancel : "close",
+                        confirm : {
+                            text : "copy",
+                            value : true,
+                            closeModal : false
+                        }
+                    }
+                })
+                .then(val => {
+                    reset();
+                    navigator.clipboard.writeText(url)
+                    swal({
+                        title : "Copied!"
+                    })
+                })
+            }
+        }
+        xhr.open("POST", "http://localhost:2023/", true); //change url when deployed
+        xhr.send(JSON.stringify({
+            urlInput : dataToServer
+        }));
+        xhr.onerror = () => {
             swal({
                 title : "An error occured",
                 icon : "error",
@@ -66,7 +79,7 @@ genBtn.addEventListener("click", () => {
             .then(val => {
                 val ? request() : reset();
             })
-        })
+        }
     }
     request();
 })
