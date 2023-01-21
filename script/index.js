@@ -60,7 +60,7 @@ genBtn.addEventListener("click", () => {
                 })
             }
         }
-        xhr.open("POST", "https://uarel-backend.onrender.com/", true); //change url when deployed
+        xhr.open("POST", "https://uarel-backend-2.onrender.com/", true); //change url when deployed
         xhr.send(JSON.stringify({
             urlInput : dataToServer
         }));
