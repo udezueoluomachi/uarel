@@ -4,7 +4,7 @@ A URL shortener
 
 # Backend @
 
-Source : **[UAREL-server](https://github.com/udezueoluomachi/uarrel-backend)**
+Source : **[UAREL-server](https://github.com/udezueoluomachi/uarrel-backend)** **[SERVER 2 - FUNCTIONING](https://github.com/udezueoluomachi/uarel-backend-2.git)**
 
 # How the application works
 
